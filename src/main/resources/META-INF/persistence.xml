@@ -5,13 +5,14 @@
              https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
 
     <persistence-unit name="jpa-course">
+        <class>com.learning.entity.Student</class>
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
             <property name="jakarta.persistence.jdbc.url"    value="jdbc:mysql://localhost:3306/test_db" />
             <property name="jakarta.persistence.jdbc.user"   value="jpauser" />
             <property name="jakarta.persistence.jdbc.password" value="jpapwd" />
 
-            <property name="hibernate.dialect"    value="org.hibernate.dialect.MySQLDialect" />
+            <!-- <property name="hibernate.dialect"    value="org.hibernate.dialect.MySQLDialect" /> -->
             <property name="hibernate.show_sql"   value="true" />
             <property name="hibernate.format_sql" value="true" />
         </properties>

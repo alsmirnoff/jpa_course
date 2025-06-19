@@ -1,9 +1,11 @@
-package com.learning;
+package com.learning.jdbc_crud;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
+import com.learning.entity.Student;
 
 public class JDBCInsert {
 

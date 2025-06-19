@@ -1,4 +1,4 @@
-package com.learning;
+package com.learning.jdbc_crud;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

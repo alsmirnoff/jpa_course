@@ -1,4 +1,4 @@
-package com.learning;
+package com.learning.jdbc_crud;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.learning.entity.Student;
 
 public class JDBCSelect {
 
