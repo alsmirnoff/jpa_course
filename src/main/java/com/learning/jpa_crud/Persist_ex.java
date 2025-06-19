@@ -17,10 +17,16 @@ public class Persist_ex {
 
             try{
                 transaction.begin();
-                // student = new Student("Chanel", "King", 9.1);
+                student = new Student("Chanel", "King", 9.1);
                 // student = new Student("Leo", "Farrell", 8.4);
                 // student = new Student("Julia", "Dean", 8.7);
-                student = new Student("Serena", "Nielsen", 7.2);
+                // student = new Student("Serena", "Nielsen", 7.2);
+                // student = new Student("Eric", "Scott", 7.4);
+                // student = new Student(null, "Sharp", 9.8);
+                // student = new Student("Isaac", "Sharp", 9.8);
+                // student = new Student("Isaac", "Harper", 9.3);
+                // student = new Student("Frankie", "Perry", 5.8);
+                // student = new Student("Frankie", "Perry", 8.0);
                 entityManager.persist(student);
                 transaction.commit();
             } catch (Exception e) {
