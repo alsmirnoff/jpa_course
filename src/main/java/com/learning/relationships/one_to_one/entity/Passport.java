@@ -1,10 +1,12 @@
 package com.learning.relationships.one_to_one.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -24,6 +26,9 @@ public class Passport {
 
     @Column(name = "eye_color")
     private String eyeColor;
+
+    @OneToOne(mappedBy = "passport", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Student student;
 
     public Passport() {
     }
@@ -64,6 +69,14 @@ public class Passport {
 
     public void setEyeColor(String eyeColor) {
         this.eyeColor = eyeColor;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
     @Override
