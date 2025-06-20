@@ -1,17 +1,17 @@
-package com.learning.entity;
+package com.learning.relationships.one_to_one.entity;
 
-import java.time.LocalDateTime;
-
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
 
 @Entity
-@Table(name = "test_students")
+@Table(name = "students")
 public class Student {
 
     @Id
@@ -19,17 +19,18 @@ public class Student {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "first_name", unique = true)
+    @Column(name = "name")
     private String name;
 
-    // @Column(name = "surname")
+    @Column(name = "surname")
     private String surname;
 
-    @Column(name = "avg_grade", nullable = false)
+    @Column(name = "avg_grade")
     private Double avgGrade;
 
-    @Transient
-    private LocalDateTime createdDate;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "passport_id")
+    private Passport passport;
 
     public Student() {
     }
@@ -38,7 +39,6 @@ public class Student {
         this.name = name;
         this.surname = surname;
         this.avgGrade = avgGrade;
-        createdDate = LocalDateTime.now();
     }
 
     public Long getId() {
@@ -73,18 +73,17 @@ public class Student {
         this.avgGrade = avgGrade;
     }
 
-    public LocalDateTime getCreatedDate() {
-        return createdDate;
+    public Passport getPassport() {
+        return passport;
     }
 
-    public void setCreatedDate(LocalDateTime createdDate) {
-        this.createdDate = createdDate;
+    public void setPassport(Passport passport) {
+        this.passport = passport;
     }
 
     @Override
     public String toString() {
-        return "Student [id=" + id + ", name=" + name + ", surname=" + surname + ", avgGrade=" + avgGrade
-                + ", createdDate=" + createdDate + "]";
+        return "Student [id=" + id + ", name=" + name + ", surname=" + surname + ", avgGrade=" + avgGrade + "]";
     }
 
 }

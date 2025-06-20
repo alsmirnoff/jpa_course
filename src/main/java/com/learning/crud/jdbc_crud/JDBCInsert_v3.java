@@ -1,4 +1,4 @@
-package com.learning.jdbc_crud;
+package com.learning.crud.jdbc_crud;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import com.learning.entity.Student;
+import com.learning.crud.entity.Student;
 
 public class JDBCInsert_v3 {
 

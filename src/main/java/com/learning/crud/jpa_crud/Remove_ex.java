@@ -1,6 +1,6 @@
-package com.learning.jpa_crud;
+package com.learning.crud.jpa_crud;
 
-import com.learning.entity.Student;
+import com.learning.crud.entity.Student;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
