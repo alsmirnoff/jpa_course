@@ -1,8 +1,12 @@
 package com.learning.relationships.one_to_one.entity;
 
+import com.learning.relationships.one_to_one.EyeColor;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -24,8 +28,9 @@ public class Passport {
     @Column(name = "height")
     private int height;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "eye_color")
-    private String eyeColor;
+    private EyeColor eyeColor;
 
     @OneToOne(mappedBy = "passport", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Student student;
@@ -33,7 +38,7 @@ public class Passport {
     public Passport() {
     }
 
-    public Passport(String email, int height, String eyeColor) {
+    public Passport(String email, int height, EyeColor eyeColor) {
         this.email = email;
         this.height = height;
         this.eyeColor = eyeColor;
@@ -63,11 +68,11 @@ public class Passport {
         this.height = height;
     }
 
-    public String getEyeColor() {
+    public EyeColor getEyeColor() {
         return eyeColor;
     }
 
-    public void setEyeColor(String eyeColor) {
+    public void setEyeColor(EyeColor eyeColor) {
         this.eyeColor = eyeColor;
     }
 
