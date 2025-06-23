@@ -25,8 +25,14 @@ public class OneToManyBi {
                 // University university = new University("MIT", Date.valueOf("1861-04-10"));
                 // Student student1 = new Student("Isaac", "Clarke", 9.8);
                 // Student student2 = new Student("Serena", "Nielsen", 7.2);
+                // Student student3 = new Student("Chanel", "King", 7.2);
+                // Student student4 = new Student("Roy", "Harper", 7.0);
+
+                
                 // university.addStudentToUniversity(student1);
                 // university.addStudentToUniversity(student2);
+                // university.addStudentToUniversity(student3);
+                // university.addStudentToUniversity(student4);
 
                 // entityManager.persist(university);
 
@@ -45,9 +51,9 @@ public class OneToManyBi {
 
             // FIND
 
-                // University university = entityManager.find(University.class, 2);
-                // System.out.println(university);
-                // System.out.println(university.getStudents());
+                University university = entityManager.find(University.class, 1);
+                System.out.println(university);
+                System.out.println(university.getStudents());
 
                 // ===================================================
 
@@ -65,8 +71,8 @@ public class OneToManyBi {
 
                 // ===================================================
 
-                Student student = entityManager.find(Student.class, 4);
-                entityManager.remove(student);
+                // Student student = entityManager.find(Student.class, 4);
+                // entityManager.remove(student);
                 
                 transaction.commit();
             } catch (Exception e) {
