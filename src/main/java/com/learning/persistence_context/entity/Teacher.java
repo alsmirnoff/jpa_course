@@ -1,4 +1,4 @@
-package com.learning.relationships.many_to_many.entity;
+package com.learning.persistence_context.entity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +14,8 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
-// @Entity
-// @Table(name = "teachers")
+@Entity
+@Table(name = "teachers")
 public class Teacher {
 
     @Id
@@ -34,17 +34,6 @@ public class Teacher {
 
     @Column(name = "is_professor")
     private Boolean isProfessor;
-
-    @ManyToMany(cascade = CascadeType.PERSIST)
-    @JoinTable(name = "teacher_uni"
-        , joinColumns = @JoinColumn(name = "teacher_id")
-        , inverseJoinColumns = @JoinColumn(name = "university_id")
-    )
-    private List<University> universities = new ArrayList<>();
-
-    public void addUniversityToTeacher(University university){
-        universities.add(university);
-    }
 
     public Teacher() {
     }
@@ -94,14 +83,6 @@ public class Teacher {
 
     public void setIsProfessor(Boolean isProfessor) {
         this.isProfessor = isProfessor;
-    }
-
-    public List<University> getUniversities() {
-        return universities;
-    }
-
-    public void setUniversities(List<University> universities) {
-        this.universities = universities;
     }
 
     @Override

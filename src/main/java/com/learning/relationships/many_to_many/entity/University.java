@@ -15,8 +15,8 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "universities")
+// @Entity
+// @Table(name = "universities")
 public class University {
     
     @Id
