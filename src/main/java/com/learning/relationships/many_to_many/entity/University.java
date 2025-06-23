@@ -1,4 +1,4 @@
-package com.learning.relationships.one_to_many.entity;
+package com.learning.relationships.many_to_many.entity;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -7,16 +7,16 @@ import java.util.List;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OrderBy;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
-// @Entity
-// @Table(name = "universities")
+@Entity
+@Table(name = "universities")
 public class University {
     
     @Id
@@ -30,14 +30,16 @@ public class University {
     @Column(name = "founding_date")
     private Date foundingDate;
 
-    @OneToMany(mappedBy = "university", fetch = FetchType.LAZY)
-    // @OrderBy("avgGrade, name DESC")
-    private List<Student> students = new ArrayList<>();
+    @ManyToMany(cascade = CascadeType.PERSIST)
+    @JoinTable(name = "teacher_uni"
+        , joinColumns = @JoinColumn(name = "university_id")
+        , inverseJoinColumns = @JoinColumn(name = "teacher_id")
+    )
+    private List<Teacher> teachers = new ArrayList<>();
 
-    public void addStudentToUniversity(Student student){
-        students.add(student);
-        student.setUniversity(this);
-    }
+    public void addTeacherToUniversity(Teacher teacher){
+        teachers.add(teacher);
+    } 
 
     public University() {
     }
@@ -71,12 +73,12 @@ public class University {
         this.foundingDate = foundingDate;
     }
 
-    public List<Student> getStudents() {
-        return students;
+    public List<Teacher> getTeachers() {
+        return teachers;
     }
 
-    public void setStudents(List<Student> students) {
-        this.students = students;
+    public void setTeachers(List<Teacher> teachers) {
+        this.teachers = teachers;
     }
 
     @Override
