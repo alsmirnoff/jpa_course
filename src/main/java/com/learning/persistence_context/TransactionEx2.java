@@ -7,7 +7,7 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 
-public class EntityStatesEx1 {
+public class TransactionEx2 {
     public static void main(String[] args) {
         try (EntityManagerFactory factory = Persistence.createEntityManagerFactory("jpa-course");
             EntityManager entityManager = factory.createEntityManager()) {
@@ -17,25 +17,20 @@ public class EntityStatesEx1 {
             try{
                 transaction.begin();
 
-                // Teacher teacher = new Teacher("Alessandro", "Lozano", "CS", true);
-
-                // System.out.println("Create entity: " + entityManager.contains(teacher));
-
-                // entityManager.persist(teacher);
-
-                // System.out.println("After persist: " + entityManager.contains(teacher));
-
-                Teacher teacher1 = new Teacher("Rio", "Berger", "Biology", false);
-                Teacher teacher2 = new Teacher("Karina", "Dennis", "Economics", false);
+                Teacher teacher1 = new Teacher("Landry", "Shelton", "Economics", true);
+                Teacher teacher2 = new Teacher("Vera", "Walton", "Geography", true);
 
                 entityManager.persist(teacher1);
+
+                Teacher teacher3 = entityManager.find(Teacher.class, 100);
+                System.out.println(teacher3.getName() + " " + teacher3.getSurname());
+
                 entityManager.persist(teacher2);
 
                 transaction.commit();
-
-                // System.out.println("After commit: " + entityManager.contains(teacher));
             } catch (Exception e) {
                 if(transaction != null && transaction.isActive()){
+                    System.out.println("!Rollback!");
                     transaction.rollback();
                 }
                 e.printStackTrace();

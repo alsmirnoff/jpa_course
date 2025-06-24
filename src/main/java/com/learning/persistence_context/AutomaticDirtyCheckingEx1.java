@@ -7,7 +7,7 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 
-public class EntityStatesEx1 {
+public class AutomaticDirtyCheckingEx1 {
     public static void main(String[] args) {
         try (EntityManagerFactory factory = Persistence.createEntityManagerFactory("jpa-course");
             EntityManager entityManager = factory.createEntityManager()) {
@@ -15,25 +15,20 @@ public class EntityStatesEx1 {
             EntityTransaction transaction = entityManager.getTransaction();
             
             try{
-                transaction.begin();
+                // transaction.begin();
 
-                // Teacher teacher = new Teacher("Alessandro", "Lozano", "CS", true);
+                // Teacher teacher = entityManager.find(Teacher.class, 3);
+                // teacher.setSubject("Biology");
 
-                // System.out.println("Create entity: " + entityManager.contains(teacher));
+                // Teacher teacher = entityManager.find(Teacher.class, 3);
+                // teacher.setSubject("CS");
+                // teacher.setSubject("Math");
+                // teacher.setIsProfessor(true);
 
-                // entityManager.persist(teacher);
+                Teacher teacher = entityManager.find(Teacher.class, 4);
+                teacher.setSubject("CS");
 
-                // System.out.println("After persist: " + entityManager.contains(teacher));
-
-                Teacher teacher1 = new Teacher("Rio", "Berger", "Biology", false);
-                Teacher teacher2 = new Teacher("Karina", "Dennis", "Economics", false);
-
-                entityManager.persist(teacher1);
-                entityManager.persist(teacher2);
-
-                transaction.commit();
-
-                // System.out.println("After commit: " + entityManager.contains(teacher));
+                // transaction.commit();
             } catch (Exception e) {
                 if(transaction != null && transaction.isActive()){
                     transaction.rollback();
