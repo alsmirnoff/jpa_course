@@ -3,6 +3,7 @@ package com.learning.persistence_context.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.Cacheable;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,6 +15,7 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
+@Cacheable
 @Entity
 @Table(name = "teachers")
 public class Teacher {
