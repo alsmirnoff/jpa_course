@@ -13,9 +13,16 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.PostLoad;
+import jakarta.persistence.PostPersist;
+import jakarta.persistence.PostRemove;
+import jakarta.persistence.PostUpdate;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreRemove;
+import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 
-@Cacheable
+// @Cacheable
 @Entity
 @Table(name = "teachers")
 public class Teacher {
@@ -47,6 +54,41 @@ public class Teacher {
         this.isProfessor = isProfessor;
     }
 
+    @PrePersist
+    void prePersist(){
+        System.out.println("@PrePersist");
+    }
+
+    @PostPersist
+    void postPersist(){
+        System.out.println("@PostPersist");
+    }
+
+    @PreUpdate
+    void preUpdate(){
+        System.out.println("@PreUpdate");
+    }
+
+    @PostUpdate
+    void postUpdate(){
+        System.out.println("@PostUpdate");
+    }
+
+    @PreRemove
+    void preRemove(){
+        System.out.println("@PreRemove");
+    }
+
+    @PostRemove
+    void postRemove(){
+        System.out.println("@PostRemove");
+    }
+
+    @PostLoad
+    void postLoad(){
+        System.out.println("@PostLoad");
+    }
+    
     public Long getId() {
         return id;
     }
