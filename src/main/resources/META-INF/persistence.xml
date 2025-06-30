@@ -5,7 +5,7 @@
              https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
 
     <persistence-unit name="jpa-course">
-        <class>com.learning.persistence_context.entity.Teacher</class>
+        <class>com.learning.jpql.entity.Student</class>
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
             <property name="jakarta.persistence.jdbc.url"    value="jdbc:mysql://localhost:3306/test_db" />
@@ -18,9 +18,9 @@
 
             <property name="hibernate.hbm2ddl.auto" value="update" />
 
-             <property name="hibernate.cache.region.factory_class" value="org.hibernate.cache.jcache.JCacheRegionFactory"/>
+            <!-- <property name="hibernate.cache.region.factory_class" value="org.hibernate.cache.jcache.JCacheRegionFactory"/>
             <property name="javax.cache.provider" value="org.ehcache.jsr107.EhcacheCachingProvider"/>
-            <property name="javax.persistence.sharedCache.mode" value="ENABLE_SELECTIVE"/>
+            <property name="javax.persistence.sharedCache.mode" value="ENABLE_SELECTIVE"/> -->
         </properties>
     </persistence-unit>
 </persistence>

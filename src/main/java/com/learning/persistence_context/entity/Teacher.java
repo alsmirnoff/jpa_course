@@ -23,8 +23,8 @@ import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 
 // @Cacheable
-@Entity
-@Table(name = "teachers")
+// @Entity
+// @Table(name = "teachers")
 public class Teacher {
 
     @Id
