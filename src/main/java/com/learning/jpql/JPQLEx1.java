@@ -51,11 +51,6 @@ public class JPQLEx1 {
                 List<Student> students = entityManager.createQuery("select s from Student s" + 
                                 " where s.avgGrade between 7 and 8", Student.class).getResultList();
 
-
-
-
-                
-
                 System.out.println(students);
 
 

@@ -9,11 +9,19 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "universities")
+// @NamedQuery(name = "University.allUniversitiesLessOrEqualTo2", query = "SELECT u FROM University u WHERE size(u.students) <= 2")
+// @NamedQuery(name = "University.studentsWithAvgGradeBetween", query = "SELECT s FROM Student s WHERE avgGrade BETWEEN :from AND :to")
+@NamedQueries({
+    @NamedQuery(name = "University.allUniversitiesLessOrEqualTo2", query = "SELECT u FROM University u WHERE size(u.students) <= 2"),
+    @NamedQuery(name = "University.studentsWithAvgGradeBetween", query = "SELECT s FROM Student s WHERE avgGrade BETWEEN :from AND :to")
+})
 public class University {
     
     @Id
