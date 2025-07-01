@@ -6,6 +6,7 @@
 
     <persistence-unit name="jpa-course">
         <class>com.learning.jpql.entity.Student</class>
+        <class>com.learning.jpql.entity.University</class>
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
             <property name="jakarta.persistence.jdbc.url"    value="jdbc:mysql://localhost:3306/test_db" />
