@@ -1,27 +1,22 @@
-package com.learning.jpql.entity;
+package com.learning.criteria_query.entity;
 
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OrderBy;
 import jakarta.persistence.Table;
 
-// @Entity
-// @Table(name = "universities")
-// @NamedQuery(name = "University.allUniversitiesLessOrEqualTo2", query = "SELECT u FROM University u WHERE size(u.students) <= 2")
-// @NamedQuery(name = "University.studentsWithAvgGradeBetween", query = "SELECT s FROM Student s WHERE avgGrade BETWEEN :from AND :to")
-@NamedQueries({
-    @NamedQuery(name = "University.allUniversitiesLessOrEqualTo2", query = "SELECT u FROM University u WHERE size(u.students) <= 2"),
-    @NamedQuery(name = "University.studentsWithAvgGradeBetween", query = "SELECT s FROM Student s WHERE avgGrade BETWEEN :from AND :to")
-})
+@Entity
+@Table(name = "universities")
 public class University {
     
     @Id
@@ -35,7 +30,7 @@ public class University {
     @Column(name = "founding_date")
     private Date foundingDate;
 
-    @OneToMany(mappedBy = "university")
+    @OneToMany(mappedBy = "university", fetch = FetchType.LAZY)
     private List<Student> students = new ArrayList<>();
 
     public void addStudentToUniversity(Student student){
