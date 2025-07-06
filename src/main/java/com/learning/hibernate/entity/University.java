@@ -13,8 +13,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
+<<<<<<< HEAD
 // @Entity
 // @Table(name = "universities")
+=======
+@Entity
+@Table(name = "universities")
+>>>>>>> 65ca48d (lesson 8 hql join)
 public class University {
     
     @Id

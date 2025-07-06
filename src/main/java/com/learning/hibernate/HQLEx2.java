@@ -27,11 +27,19 @@ public class HQLEx2 {
 
             // All Students
             // select * from students and universities;
+<<<<<<< HEAD
                 // Query<Student> query = session.createQuery("from Student", Student.class);
                 // List<Student> students = query.getResultList();
                 // for (Student st : students) {
                 //     System.out.println(st);
                 // }
+=======
+                Query<Object[]> query = session.createQuery("from University u JOIN u.students s ", Object[].class);
+                List<Object[]> students = query.getResultList();
+                for (Object[] info : students) {
+                    System.out.println(info[0] + " ---> " + info[1]);
+                }
+>>>>>>> 65ca48d (lesson 8 hql join)
 
                 // ===================================================
 
