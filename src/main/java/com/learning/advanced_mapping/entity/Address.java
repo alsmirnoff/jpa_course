@@ -3,7 +3,7 @@ package com.learning.advanced_mapping.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
-@Embeddable
+// @Embeddable
 public class Address {
     
     @Column(name = "country")

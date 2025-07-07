@@ -2,7 +2,7 @@ package com.learning.advanced_mapping.entity;
 
 import jakarta.persistence.Embeddable;
 
-@Embeddable
+// @Embeddable
 public class Friend {
 
     private String name;

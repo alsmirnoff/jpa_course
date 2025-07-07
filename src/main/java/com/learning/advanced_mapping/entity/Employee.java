@@ -16,8 +16,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "employees")
+// @Entity
+// @Table(name = "employees")
 public class Employee {
 
     @Column(name = "id")
