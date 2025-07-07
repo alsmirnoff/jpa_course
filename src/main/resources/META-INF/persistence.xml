@@ -5,8 +5,12 @@
              https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
 
     <persistence-unit name="jpa-course">
+<<<<<<< HEAD
         <class>com.learning.relationships.one_to_many.entity.Student</class>
         <class>com.learning.relationships.one_to_many.entity.University</class>
+=======
+        <class>com.learning.advanced_mapping.entity.Employee</class>
+>>>>>>> 389de38 (lesson 9 composite type mapping)
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
             <property name="jakarta.persistence.jdbc.url"    value="jdbc:mysql://localhost:3306/test_db" />
