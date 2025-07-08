@@ -41,10 +41,10 @@ public class Teacher extends Employee {
     public String toString() {
         return "Teacher [" +
                 "id=" + getId() + 
-                "name=" + getName() + 
-                "salary=" + getSalary() + 
-                "experience=" + getExperience() + 
-                "subject=" + subject + 
+                ", name=" + getName() + 
+                ", salary=" + getSalary() + 
+                ", experience=" + getExperience() + 
+                ", subject=" + subject + 
                 ", is_professor=" + is_professor + 
                 "]";
     }

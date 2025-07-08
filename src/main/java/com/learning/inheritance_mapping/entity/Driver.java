@@ -41,10 +41,10 @@ public class Driver extends Employee{
     public String toString() {
         return "Driver [" +
                 "id=" + getId() + 
-                "name=" + getName() + 
-                "salary=" + getSalary() + 
-                "experience=" + getExperience() + 
-                "category=" + category + 
+                ", name=" + getName() + 
+                ", salary=" + getSalary() + 
+                ", experience=" + getExperience() + 
+                ", category=" + category + 
                 ", carBrand=" + carBrand + 
                 "]";
     }
