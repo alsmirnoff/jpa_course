@@ -11,13 +11,13 @@ import jakarta.persistence.InheritanceType;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "employees")
-@Inheritance(strategy = InheritanceType.JOINED)
+// @Table(name = "employees")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 // @DiscriminatorColumn(name = "emp_type")
 public abstract class Employee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     @Column(name = "id")
     private Long id;
 
