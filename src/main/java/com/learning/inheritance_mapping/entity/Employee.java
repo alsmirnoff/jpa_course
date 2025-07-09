@@ -12,8 +12,8 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "employees")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "emp_type")
+@Inheritance(strategy = InheritanceType.JOINED)
+// @DiscriminatorColumn(name = "emp_type")
 public abstract class Employee {
 
     @Id

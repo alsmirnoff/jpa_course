@@ -30,6 +30,14 @@ public static void main(String[] args) {
 
                 // ===================================================
 
+                // Teacher teacher = new Teacher("Rio", 200, 3d, "Biology", false);
+                // Driver driver = new Driver("Michael", 2800, 25d, 'C', "Mercedes");
+
+                // entityManager.persist(teacher);
+                // entityManager.persist(driver);
+
+                // ===================================================
+
                 // TypedQuery<Employee> query = entityManager.createQuery("SELECT emp FROM Employee emp", Employee.class);
                 // List<Employee> employees = query.getResultList();
                 // System.out.println(employees);
