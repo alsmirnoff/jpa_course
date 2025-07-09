@@ -8,16 +8,19 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
+import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.Table;
 
-@Entity
+// @Entity
 // @Table(name = "employees")
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+// @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 // @DiscriminatorColumn(name = "emp_type")
+
+@MappedSuperclass
 public abstract class Employee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
