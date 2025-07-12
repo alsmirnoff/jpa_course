@@ -15,8 +15,8 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.OrderBy;
 import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "universities")
+// @Entity
+// @Table(name = "universities")
 public class University {
     
     @Id

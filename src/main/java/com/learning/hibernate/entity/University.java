@@ -13,23 +13,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 // @Entity
 // @Table(name = "universities")
-=======
-@Entity
-@Table(name = "universities")
->>>>>>> 65ca48d (lesson 8 hql join)
-=======
-// @Entity
-// @Table(name = "universities")
->>>>>>> 389de38 (lesson 9 composite type mapping)
-=======
-// @Entity
-// @Table(name = "universities")
->>>>>>> 691b6b4 (lesson 11 n+1 problem)
 public class University {
     
     @Id
