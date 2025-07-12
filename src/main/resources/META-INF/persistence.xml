@@ -7,6 +7,7 @@
     <persistence-unit name="jpa-course">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <class>com.learning.relationships.one_to_many.entity.Student</class>
         <class>com.learning.relationships.one_to_many.entity.University</class>
 =======
@@ -16,6 +17,10 @@
         <class>com.learning.inheritance_mapping.entity.Teacher</class>
         <class>com.learning.inheritance_mapping.entity.Driver</class>
 >>>>>>> b437e2e (lesson 10 inheritance single table)
+=======
+        <class>com.learning.relationships.one_to_many.entity.Student</class>
+        <class>com.learning.relationships.one_to_many.entity.University</class>
+>>>>>>> 691b6b4 (lesson 11 n+1 problem)
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
             <property name="jakarta.persistence.jdbc.url"    value="jdbc:mysql://localhost:3306/test_db" />
