@@ -5,8 +5,8 @@
              https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
 
     <persistence-unit name="jpa-course">
-        <class>com.learning.criteria_query.entity.Student</class>
-        <class>com.learning.criteria_query.entity.University</class>
+        <class>com.learning.relationships.one_to_many.entity.Student</class>
+        <class>com.learning.relationships.one_to_many.entity.University</class>
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
             <property name="jakarta.persistence.jdbc.url"    value="jdbc:mysql://localhost:3306/test_db" />

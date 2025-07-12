@@ -15,8 +15,8 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.OrderBy;
 import jakarta.persistence.Table;
 
-// @Entity
-// @Table(name = "universities")
+@Entity
+@Table(name = "universities")
 public class University {
     
     @Id
@@ -30,7 +30,7 @@ public class University {
     @Column(name = "founding_date")
     private Date foundingDate;
 
-    @OneToMany(mappedBy = "university", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "university", cascade = CascadeType.PERSIST)
     // @OrderBy("avgGrade, name DESC")
     private List<Student> students = new ArrayList<>();
 
